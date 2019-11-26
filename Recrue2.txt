@@ -1,0 +1,78 @@
+while not is_on_target():
+
+    while not is_in_front_of_wolf() and can_move():
+        move()
+
+    if get_y() > get_target_y():
+        while get_direction() != NORTH:
+            turn_left()
+            while is_in_front_of_wolf():
+                turn_left()
+                if can_move():
+                    move()
+
+                else:
+                    turn_left()
+
+            if can_move():
+                move()
+        if not is_in_front_of_wolf() and can_move():
+            move()
+        else:
+            turn_left()
+
+    else:
+        while get_direction() != SOUTH:
+            turn_right()
+            while is_in_front_of_wolf():
+                turn_right()
+                if can_move():
+                    move()
+
+                else:
+                    turn_right()
+
+            if can_move():
+                move()
+        if not is_in_front_of_wolf() and can_move():
+            move()
+        else:
+            turn_right()
+
+    if get_x() > get_target_x():
+        while get_direction() != WEST:
+            turn_left()
+            while is_in_front_of_wolf():
+                turn_left()
+                if can_move():
+                    move()
+
+                else:
+                    turn_left()
+
+            if can_move():
+                move()
+        if not is_in_front_of_wolf() and can_move():
+            move()
+        else:
+            turn_left()
+
+    else:
+        while get_direction() != EAST:
+            turn_right()
+            while is_in_front_of_wolf():
+                turn_right()
+                if can_move():
+                    move()
+
+                else:
+                    turn_right()
+
+            if can_move():
+                move()
+        if not is_in_front_of_wolf() and can_move():
+            move()
+        else:
+            turn_right()
+
+spy_on_target()
